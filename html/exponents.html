@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>exponents</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1 id="exponents">Exponents</h1>
+<p>Exponents are a shortcut for repeated multiplication:</p>
+<p><span class="math inline">\(\qquad a^n = \underbrace{a \cdot a \cdot
+\dots \cdot a}_{n \text{ times}}\)</span></p>
+<h1 id="exponent-rules">Exponent Rules</h1>
+<p>These are the rules for converting formulas with exponents.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product</td>
+<td><span class="math display">\[a^m \times a^n = a^{m+n}\]</span></td>
+</tr>
+<tr>
+<td>Quotient</td>
+<td><span class="math display">\[a^m \div a^n = a^{m-n}\]</span></td>
+</tr>
+<tr>
+<td>Power of a Power</td>
+<td><span class="math display">\[(a^m)^n = a^{m \times n}\]</span></td>
+</tr>
+<tr>
+<td>Power of a Product</td>
+<td><span class="math display">\[(ab)^m = a^m b^m\]</span></td>
+</tr>
+<tr>
+<td>Power of a Quotient</td>
+<td><span class="math display">\[\left(\frac{a}{b}\right)^m =
+\frac{a^m}{b^m}\]</span></td>
+</tr>
+<tr>
+<td>Negative Exponent</td>
+<td><span class="math display">\[a^{-n} = \frac{1}{a^n}\]</span></td>
+</tr>
+<tr>
+<td>Fractional Exponent</td>
+<td><span class="math display">\[a^{m/n} = \sqrt[n]{a^m}\]</span></td>
+</tr>
+</tbody>
+</table>
+<h1 id="exponent-rule-proofs">Exponent Rule Proofs</h1>
+<p>Mathematical proofs for exponent rules rely directly on the
+definition of an exponent as repeated multiplication:</p>
+<p><span class="math inline">\(\qquad a^n = \underbrace{a \cdot a \cdot
+\dots \cdot a}_{n \text{ times}}\)</span></p>
+<p>By expanding these expressions into their multiplied forms, the
+underlying rules become clear.</p>
+<h2 id="the-product-rule">The Product Rule</h2>
+<p>This is a proof for the Product Rule.</p>
+<p><span class="math inline">\(\qquad a^m \cdot a^n =
+a^{m+n}\)</span></p>
+<ol type="1">
+<li>Definition Expansion</li>
+</ol>
+<p><span class="math inline">\(\qquad a^m = \underbrace{a \cdot a \cdot
+\dots \cdot a}_{m \text{ times}}\)</span></p>
+<p><span class="math inline">\(\qquad a^n = \underbrace{a \cdot a \cdot
+\dots \cdot a}_{n \text{ times}}\)</span></p>
+<ol start="2" type="1">
+<li>Combined Multiplication</li>
+</ol>
+<p><span class="math inline">\(\qquad a^m \cdot a^n = \left(
+\underbrace{a \cdot a \cdot \dots \cdot a}_{m \text{ times}} \right)
+\cdot \left( \underbrace{a \cdot a \cdot \dots \cdot a}_{n \text{
+times}} \right)\)</span></p>
+<ol start="3" type="1">
+<li>Count the Total</li>
+</ol>
+<blockquote>
+<p>There are a total of <span class="math inline">\((m + n)\)</span>
+factors of <span class="math inline">\(a\)</span> being multiplied
+together.</p>
+</blockquote>
+<ol start="4" type="1">
+<li>Conclusion</li>
+</ol>
+<p><span class="math inline">\(\qquad a^m \cdot a^n =
+a^{m+n}\)</span></p>
+<h2 id="the-quotient-rule">The Quotient Rule</h2>
+<p>This is a proof of the Quotient Rule.</p>
+<p><span class="math inline">\(\qquad \frac{a^m}{a^n} = a^{m-n}\)</span>
+(where <span class="math inline">\(a \neq 0\)</span>)</p>
+<ol type="1">
+<li>Definition Expansion</li>
+</ol>
+<p><span class="math inline">\(\qquad \frac{a^m}{a^n} =
+\frac{\overbrace{a \cdot a \cdot \dots \cdot a}^{m \text{
+times}}}{\underbrace{a \cdot a \cdot \dots \cdot a}_{n \text{
+times}}}\)</span></p>
+<ol start="2" type="1">
+<li>Cancellation</li>
+</ol>
+<blockquote>
+<p>Every factor of <span class="math inline">\(a\)</span> in the
+denominator cancels out a corresponding factor of <span
+class="math inline">\(a\)</span> in the numerator (<span
+class="math inline">\(\frac{a}{a} = 1\)</span>).</p>
+</blockquote>
+<ol start="4" type="1">
+<li>Count the Remaining</li>
+</ol>
+<blockquote>
+<p>After canceling <span class="math inline">\(n\)</span> factors from
+both the top and bottom, you are left with exactly <span
+class="math inline">\((m - n)\)</span> factors of <span
+class="math inline">\(a\)</span> in the numerator.</p>
+</blockquote>
+<ol start="5" type="1">
+<li>Conclusion</li>
+</ol>
+<p><span class="math inline">\(\qquad \frac{a^m}{a^n} =
+a^{m-n}\)</span></p>
+<h2 id="the-zero-exponent-rule">The Zero Exponent Rule</h2>
+<p>This is a proof for the Zero Exponent Rule.</p>
+<p><span class="math inline">\(\qquad a^0 = 1\)</span> (where <span
+class="math inline">\(a \neq 0\)</span>)</p>
+<ol type="1">
+<li>Setup</li>
+</ol>
+<blockquote>
+<p>Start with a simple division where the numerator and denominator are
+identical: <span class="math inline">\(\frac{a^n}{a^n}\)</span>.</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Method 1 (Arithmetic)</li>
+</ol>
+<blockquote>
+<p>Any non-zero number divided by itself equals 1.</p>
+</blockquote>
+<p><span class="math inline">\(\qquad \frac{a^n}{a^n} = 1\)</span></p>
+<ol start="3" type="1">
+<li>Method 2 (Quotient Rule)</li>
+</ol>
+<blockquote>
+<p>Apply the quotient rule by subtracting the exponents.</p>
+</blockquote>
+<p><span class="math inline">\(\qquad \frac{a^n}{a^n} = a^{n-n} =
+a^0\)</span></p>
+<ol start="4" type="1">
+<li>Conclusion</li>
+</ol>
+<blockquote>
+<p>Since both methods solve the exact same expression, their results
+must equal each other.</p>
+</blockquote>
+<p><span class="math inline">\(\qquad a^0 = 1\)</span></p>
+<h2 id="the-negative-exponent-rule">The Negative Exponent Rule</h2>
+<p>This is a proof for the Negative Exponent Rule.</p>
+<p><span class="math inline">\(\qquad a^{-n} =
+\frac{1}{a^n}\)</span></p>
+<ol type="1">
+<li>Setup</li>
+</ol>
+<blockquote>
+<p>Write out the expression <span class="math inline">\(a^{-n}\)</span>
+as a product using the zero exponent rule (<span
+class="math inline">\(a^0 = 1\)</span>).</p>
+</blockquote>
+<p><span class="math inline">\(\qquad a^{-n} = a^{0 - n}\)</span></p>
+<ol start="2" type="1">
+<li>Reverse Quotient Rule</li>
+</ol>
+<blockquote>
+<p>Rewrite this subtraction in the exponent as a division problem.</p>
+</blockquote>
+<p><span class="math inline">\(\qquad a^{0 - n} =
+\frac{a^0}{a^n}\)</span></p>
+<ol start="3" type="1">
+<li>Substitute <span class="math inline">\(a^0\)</span></li>
+</ol>
+<blockquote>
+<p>Substitute <span class="math inline">\(1\)</span> in place of <span
+class="math inline">\(a^0\)</span>.</p>
+</blockquote>
+<p><span class="math inline">\(\qquad \frac{a^0}{a^n} =
+\frac{1}{a^n}\)</span></p>
+<ol start="4" type="1">
+<li>Conclusion</li>
+</ol>
+<p><span class="math inline">\(\qquad a^{-n} =
+\frac{1}{a^n}\)</span></p>
+<h2 id="the-power-of-a-power-rule">The Power of a Power Rule</h2>
+<p>This is a proof for the Power of a Power Rule.</p>
+<p><span class="math inline">\(\qquad (a^m)^n = a^{m \cdot
+n}\)</span></p>
+<ol type="1">
+<li>Definition Expansion</li>
+</ol>
+<blockquote>
+<p>Treat <span class="math inline">\(a^m\)</span> as the base being
+multiplied by itself <span class="math inline">\(n\)</span> times.</p>
+</blockquote>
+<p><span class="math inline">\(\qquad (a^m)^n = \underbrace{a^m \cdot
+a^m \cdot \dots \cdot a^m}_{n \text{ times}}\)</span></p>
+<ol start="2" type="1">
+<li>Apply Product Rule</li>
+</ol>
+<blockquote>
+<p>Use the product rule to add all the exponents together.</p>
+</blockquote>
+<p><span class="math inline">\(\qquad a^{\overbrace{m + m + \dots +
+m}^{n \text{ times}}}\)</span></p>
+<ol start="3" type="1">
+<li>Simplify Addition</li>
+</ol>
+<blockquote>
+<p>Adding the number <span class="math inline">\(m\)</span> a total of
+<span class="math inline">\(n\)</span> times is the exact definition of
+multiplication (<span class="math inline">\(m \cdot n\)</span>).</p>
+</blockquote>
+<ol start="4" type="1">
+<li>Conclusion</li>
+</ol>
+<p><span class="math inline">\(\qquad (a^m)^n = a^{m \cdot
+n}\)</span></p>
+<h3 id="logarithms">Logarithms</h3>
+<p><em>Logarithms</em> are the reverse of exponents. If we say a number
+<span class="math inline">\(n\)</span> has the value of a base <span
+class="math inline">\(b\)</span> to the power <span
+class="math inline">\(m\)</span>:</p>
+<p><span class="math inline">\(\qquad n = b^m\)</span></p>
+<p>The logarithm of <span class="math inline">\(n\)</span>, base <span
+class="math inline">\(b\)</span>, is <span
+class="math inline">\(m\)</span>:</p>
+<p><span class="math inline">\(\qquad log_{b}\ n = m\)</span></p>
+<p>Logarithms are another convenient way to represent large numbers. For
+<span class="math inline">\(n\)</span> = <span
+class="math inline">\(1,000,000\)</span>:</p>
+<p><span class="math inline">\(\qquad log_{10}\ n = log_{10}\ 1,000,000
+= log_{10}\ 10^6 = 6\)</span></p>
+<h3 id="roots">Roots</h3>
+<p>The <em>square root</em> of a number <span
+class="math inline">\(n\)</span> is the number which if multplied by
+itself will be <span class="math inline">\(n\)</span>.</p>
+<p><span class="math inline">\(\qquad \sqrt{n} \cdot \sqrt{n} =
+(\sqrt{n})^2 = n\)</span></p>
+<p>The cube root is the third root of <span
+class="math inline">\(n\)</span>.</p>
+<p><span class="math inline">\(\qquad \sqrt[3]{n} \cdot \sqrt[3]{n}
+\cdot \sqrt[3]{n} = (\sqrt[3]{n})^3 = n\)</span></p>
+<p>The fourth root is <span class="math inline">\(\sqrt[4]{n}\)</span>,
+and so on. We say this follows the <em>fractional exponent</em>
+rule.</p>
+<p><span class="math inline">\(\qquad
+\sqrt[n]{a}\&gt;=\sqrt[n]{a^1}\&gt;=\&gt;a^{\frac{1}{n}}\)</span></p>
+</body>
+</html>
