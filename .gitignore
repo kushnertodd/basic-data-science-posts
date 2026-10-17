@@ -4,6 +4,7 @@ bin/
 .*.swp
 .$*
 ~$*
+audible_cleaned.tsv
 #*.html
 .ipynb_checkpoints
 # Byte-compiled / optimized / DLL files
