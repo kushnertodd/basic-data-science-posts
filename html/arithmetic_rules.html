@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>arithmetic_rules</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h2 id="types-of-numbers">Types of numbers</h2>
+<p>The types of numbers are listed here.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Number type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Natural numbers</td>
+<td style="text-align: left;">The counting numbers from 1 to
+infinity</td>
+<td style="text-align: left;"><span class="math display">\[1, 2, 3, 4,
+\dots\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Whole numbers</td>
+<td style="text-align: left;">All natural numbers plus zero</td>
+<td style="text-align: left;"><span class="math display">\[0, 1, 2, 3,
+4, \dots\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Integers</td>
+<td style="text-align: left;">All positive and negative counting
+numbers, plus zero</td>
+<td style="text-align: left;"><span class="math display">\[\dots, -4,
+-3, -2, -1, 0, 1, 2, 3, 4, \dots\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Rational numbers</td>
+<td style="text-align: left;">All numbers that are fractions of two
+integers</td>
+<td style="text-align: left;"><span class="math display">\[\frac{1}{2},
+\frac{3}{4}\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Irrational numbers</td>
+<td style="text-align: left;">Numbers with non-terminating,
+non-repeating decimals</td>
+<td style="text-align: left;"><span class="math display">\[\pi,
+\sqrt{2}\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Real numbers</td>
+<td style="text-align: left;">All rational and irrational numbers</td>
+<td style="text-align: left;"><span class="math display">\[\frac{1}{2},
+\frac{3}{4}, \pi, \sqrt{2}\]</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="expressions">Expressions</h2>
+<p>Expressions are combinations of variables, values, and operators that
+give other values. An example of an expression is</p>
+<p>a + (b <span class="math inline">\(\cdot\)</span> 4 - 1)</p>
+<h2 id="equations">Equations</h2>
+<p>Equations say that two expressions separated by an equals sign = have
+the same value. There are a number of rules for equations.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Rule</th>
+<th style="text-align: left;">Example</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Commutative</td>
+<td style="text-align: left;"><span class="math display">\[a\ +\ b\ =\
+b\ +\ a\]</span></td>
+<td style="text-align: left;">For addition</td>
+</tr>
+<tr>
+<td style="text-align: left;">Commutative</td>
+<td style="text-align: left;"><span class="math display">\[a\ \cdot\ b\
+=\ b\ \cdot\ a\]</span></td>
+<td style="text-align: left;">For multiplication</td>
+</tr>
+<tr>
+<td style="text-align: left;">Association</td>
+<td style="text-align: left;"><span class="math display">\[a\ +\ (b\ +\
+c)\ =\ (a\ +\ b)\ +\ c\]</span></td>
+<td style="text-align: left;">For addition</td>
+</tr>
+<tr>
+<td style="text-align: left;">Association</td>
+<td style="text-align: left;"><span class="math display">\[a\ \cdot\ (b\
+\cdot\ c)\ =\ (a\ \cdot\ b)\ \cdot\ c\]</span></td>
+<td style="text-align: left;">For multiplication</td>
+</tr>
+<tr>
+<td style="text-align: left;">Identity</td>
+<td style="text-align: left;"><span class="math display">\[a + 0 =
+a\]</span></td>
+<td style="text-align: left;">for addition</td>
+</tr>
+<tr>
+<td style="text-align: left;">Identity</td>
+<td style="text-align: left;"><span class="math display">\[a - 0 =
+a\]</span></td>
+<td style="text-align: left;">for subtraction</td>
+</tr>
+<tr>
+<td style="text-align: left;">Identity</td>
+<td style="text-align: left;"><span class="math display">\[a - a =
+0\]</span></td>
+<td style="text-align: left;">for subtraction</td>
+</tr>
+<tr>
+<td style="text-align: left;">Identity</td>
+<td style="text-align: left;"><span class="math display">\[-a + a =
+0\]</span></td>
+<td style="text-align: left;">for subtraction</td>
+</tr>
+<tr>
+<td style="text-align: left;">Identity</td>
+<td style="text-align: left;"><span class="math display">\[a\ \cdot\ 1 =
+a\]</span></td>
+<td style="text-align: left;">for multiplication</td>
+</tr>
+<tr>
+<td style="text-align: left;">Identity</td>
+<td style="text-align: left;"><span class="math display">\[a\ \div\ 1 =
+a\]</span></td>
+<td style="text-align: left;">for division</td>
+</tr>
+<tr>
+<td style="text-align: left;">Identity</td>
+<td style="text-align: left;"><span class="math display">\[a\ \div\ a =
+1\]</span></td>
+<td style="text-align: left;">for division</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the Commutative and Association rules do not apply for
+substraction and division. These are equation rules for algebra.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Rule</th>
+<th style="text-align: center;">If</th>
+<th style="text-align: center;">Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Adding constants</td>
+<td style="text-align: center;"><span class="math display">\[a =
+b\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a + c = b +
+c\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Subtracting constants</td>
+<td style="text-align: center;"><span class="math display">\[a =
+b\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a - c = b -
+c\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiplying by constants</td>
+<td style="text-align: center;"><span class="math display">\[a =
+b\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a\ \cdot\
+c\ =\ b\ \cdot\ c\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Dividing by constants</td>
+<td style="text-align: center;"><span class="math display">\[a =
+b\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a\ \div\ c\
+=\ b\ \div\ c\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Inverse of adding</td>
+<td style="text-align: center;"><span class="math display">\[a = b +
+c\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a - c =
+b\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Inverse of subtracting</td>
+<td style="text-align: center;"><span class="math display">\[a = b -
+c\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a + c =
+b\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Inverse of multiplying</td>
+<td style="text-align: center;"><span class="math display">\[a = b\
+\cdot\ c\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a\ \div\ c
+= b\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Inverse of dividing</td>
+<td style="text-align: center;"><span class="math display">\[a = b\
+\div\ c\]</span></td>
+<td style="text-align: center;"><span class="math display">\[a\ \cdot\ c
+= b\]</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="fraction-rules">Fraction rules</h2>
+<p>There are a number of opertions on fractions.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Rule</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Addition</td>
+<td style="text-align: left;"><span class="math display">\[\frac{a}{c}\
++\ \frac{b}{c}\ =\ \frac{a\ +\ b}{c}\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Subtraction</td>
+<td style="text-align: left;"><span class="math display">\[\frac{a}{c}\
+-\ \frac{b}{c}\ =\ \frac{a\ -\ b}{c}\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiplication</td>
+<td style="text-align: left;"><span class="math display">\[\frac{a}{c}\
+\cdot\ \frac{b}{c}\ =\frac{a\ \cdot\ b}{c}\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Division</td>
+<td style="text-align: left;"><span class="math display">\[\frac{a}{b}\
+\div\ \frac{c}{d}\ =\frac{a}{b}\ \cdot\ \frac{d}{c}\ \]</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="factoring">Factoring</h2>
+<p>A number <code>N</code> may be a multiple of whole numbers
+<code>a</code>, <code>b</code>, <code>c</code>, etc.</p>
+<p><span class="math inline">\(\qquad n =
+a\&gt;\cdot\&gt;b\&gt;\cdot\&gt;c\&gt;\cdot\&gt;\cdots\)</span></p>
+<p>The numbers <span class="math inline">\(a\)</span>, <span
+class="math inline">\(b\)</span>, <span
+class="math inline">\(c\)</span>, etc. are the <em>factors</em> of <span
+class="math inline">\(n\)</span>. We say <span
+class="math inline">\(n\)</span> is <em>evenly divisible</em> by <span
+class="math inline">\(a\)</span>, <span
+class="math inline">\(b\)</span>, <span
+class="math inline">\(c\)</span>, etc.</p>
+<h2 id="prime-numbers">Prime numbers</h2>
+<p>A number always at least has two factors, 1 and itself.</p>
+<p><span class="math inline">\(n = 1\&gt;\cdot\&gt;n\)</span></p>
+<p>A number that is only evenly divisible by 1 and itself is a <em>prime
+number</em>.</p>
+<p>We say that when the <em>factorization</em> of <span
+class="math inline">\(n\)</span> is</p>
+<p><span class="math inline">\(n =
+a\&gt;\cdot\&gt;b\&gt;\cdot\&gt;c\&gt;\cdot\&gt;\cdots\)</span></p>
+<p>If all of <span class="math inline">\(a\)</span>, <span
+class="math inline">\(b\)</span>, <span
+class="math inline">\(c\)</span>, etc. are prime, then that is the
+<em>prime factorization</em> of <span
+class="math inline">\(n\)</span>.</p>
+<h2 id="factorials">Factorials</h2>
+<p>A special case of factoring is when the factors of a number are all
+positive whole numbers less than or equal to <code>n</code>. This number
+is the <em>factorial</em> of <code>n</code> or <span
+class="math inline">\(n!\)</span>.</p>
+<p><span class="math inline">\(\qquad n! = n \cdot (n - 1) \cdot (n - 2)
+\cdot\&gt;\cdots\&gt; \cdot 1\)</span></p>
+</body>
+</html>
